@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: [sidebar-start] 7rem [sidebar-end full-start] minmax(5rem, 1fr) 
+                      [center-start] repeat(12, [col-start] minmax(min-content, 14rem) 
+                      [col-end]) [center-end] minmax(5rem, 1fr) [full-end];
+  }
+  
+  .sidebar {
+    background-color:aliceblue;
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / -1;
+    
+  }
+  
+  .main {
+    background-color: cadetblue;
+    grid-column: full-start / full-end;
+    min-height: 100vh;
+  }
+  
+  .header {
+    background-color: beige;
+    grid-column: full-start / full-end;
+    height: 7rem;
+  
+  }
